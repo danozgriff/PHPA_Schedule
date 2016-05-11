@@ -1,14 +1,12 @@
-import scraperwiki 
-import urllib2, lxml.etree
+import scraperwiki, urllib2
+import lxml
 
-url = 'http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping_Schedule.pdf'
-pdfdata = urllib2.urlopen(url).read() 
-xmldata = scraperwiki.pdftoxml(pdfdata) 
-root = etree.fromstring(xmldata)
+u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping_Schedule.pdf")
+ 
+r=lxml.etree.fromstring(x) 
+r.xpath('//page[@number="1"]')
+r.xpath('//text[@left="64"]/b')[0:10]
+r.xpath('//text[@left="64"]/b')[8].text
 
-pages = list(root) 
-print "There are",len(pages),"pages"
-
-print etree.tostring(root, pretty_print=True)
 
 
