@@ -6,6 +6,8 @@ import sys
 u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping_Schedule.pdf")
  
 x=scraperwiki.pdftoxml(u.read())
+test = re.search(r'jpg((.|\n)+)Duty', x).group(0)
+print test
 test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 #print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
@@ -15,7 +17,7 @@ obj = ''
 row=''
 delim=0
 for tuple in tuples:
- print tuple[2]
+ ##print tuple[2]
  if cnt == 0:
   obj = obj + '|' + tuple[2].strip(' ')
  elif cnt == 1:
@@ -28,8 +30,8 @@ for tuple in tuples:
   
   if (delim==0 and int(obj[1:3]) >= 26 and int(obj[1:3]) <= 30):
    record = re.search(r'\|\|\|((.|\n)+)', obj).group(0)
-   print record
-   #print row
+   ##print record
+
    
    row = obj
    obj = ''
