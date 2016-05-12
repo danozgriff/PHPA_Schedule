@@ -8,7 +8,7 @@ u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping
 x=scraperwiki.pdftoxml(u.read())
 test = re.search(r'jpg((.|\n)+)</text>', x).group(0)
 #<b>THURSDAY 12th MAY 2016          </b>
-test2 = re.search(r'<b>(.*?)</b>', test).group(0)
+test2 = re.search(r'<b>(.*?)</b>', test).group(0).replace('<b>', '').replace('</b>', '').strip(' ')
 print test2
 test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 #print test1
