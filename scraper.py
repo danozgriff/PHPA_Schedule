@@ -33,9 +33,8 @@ for tuple in tuples:
   
   if obj[:3] == '27|':
    print row
-   row = ''
+   row = obj
    obj = ''
-   row = row + obj
   else:
    row = row + obj
    obj = ''
