@@ -8,7 +8,7 @@ u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping
 x=scraperwiki.pdftoxml(u.read())
 # Get Schedule Date
 Schedule_Date = re.search(r'jpg((.|\n)+)</text>', x).group(0)
-Schedule_Date = re.search(r'<b>(.*?)</b>', test).group(0).replace('<b>', '').replace('</b>', '').strip(' ')
+Schedule_Date = re.search(r'<b>(.*?)</b>', Schedule_Date).group(0).replace('<b>', '').replace('</b>', '').strip(' ')
 print Schedule_Date
 
 # Scan PDF
