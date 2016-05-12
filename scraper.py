@@ -69,7 +69,7 @@ for tuple in tuples:
   
   print obj
   print obj.find('|')
-  print int(obj[:obj.find('|')])
+  #print int(obj[:obj.find('|')])
   
   if (delim==0 and int(obj[:obj.find('|')]) < DWT):
    record = re.search(r'\|((.|\n)+)', obj).group(0)
