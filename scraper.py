@@ -19,9 +19,9 @@ test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
 for tuple in tuples:
- print tuple[1]
+# print tuple[1]
  print tuple[2]
- print tuple[3]
+# print tuple[3]
 #str(test1.replace(" ", "")).replace("><", ""))
 #tuples = re.findall(r'(\">|\'>|img\/)(.*?)(<\/|\.gif)', str(test1.replace(" ", "")).replace("><", ""))
 
