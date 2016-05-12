@@ -15,22 +15,59 @@ print Schedule_Date
 test1 = re.search(r'VESSEL((.|\n)+)TIDES', x).group(0)
 #print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
-tuples = re.findall(r'((left="|width="|">)(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
+tuples = re.findall(r'((left=")(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
 cnt=0
 obj = ''
 row=''
 delim=0
+headers=1
 for tuple in tuples:
- print tuple[2]
+
+ if headers==1:
+  if cnt == 0:
+   DWT = int(tuple[2].strip(' '))
+  elif cnt == 2:
+   AGENT = int(tuple[2].strip(' '))
+  elif cnt == 4:
+   ETA = int(tuple[2].strip(' '))
+  elif cnt == 6:
+   FROM = int(tuple[2].strip(' '))
+  elif cnt == 8:
+   TO = int(tuple[2].strip(' '))
+  elif cnt == 10:
+   VHF = int(tuple[2].strip(' '))
+  elif cnt == 12:
+   PILOT = int(tuple[2].strip(' '))
+  elif cnt == 14:
+   HARBOUR_PV = int(tuple[2].strip(' '))
+  elif cnt == 16:
+   HC_OR_PV = int(tuple[2].strip(' '))
+  elif cnt == 18:
+   POB = int(tuple[2].strip(' '))
+  elif cnt == 20:
+   TUGS = int(tuple[2].strip(' '))
+  elif cnt == 22:
+   BPN_DPN = int(tuple[2].strip(' '))
+  elif cnt == 24:
+   REMARKS = int(tuple[2].strip(' '))
+   headers=0
+   cnt=0
+  cnt=cnt+1
+
+   
+  elif cnt == 1:
+   cnt = 0
+  cnt=cnt+1
+
  if cnt == 0:
   obj = obj + '|' + tuple[2].strip(' ')
  elif cnt == 1:
-  obj = obj + '||' + tuple[2].strip(' ')
- else:
   #y=tuple[2].find('  ')+1
   #obj = obj + '|||' + tuple[2][:y]
-  obj = obj + '|||' + tuple[2].strip(' ')
+  obj = obj + '||' + tuple[2].strip(' ')
   cnt=-1
+  
+  
   
   if (delim==0 and int(obj[1:3]) >= 26 and int(obj[1:3]) <= 30):
    record = re.search(r'\|\|\|((.|\n)+)', obj).group(0)
