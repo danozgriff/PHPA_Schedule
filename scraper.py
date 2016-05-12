@@ -12,7 +12,7 @@ x=scraperwiki.pdftoxml(u.read())
 #r.xpath('//text[@left="64"]/b')[8].text
 
 #html = response.read()
-test1 = re.search(r'jpg(.*?)TIDES', x).group()
+test1 = re.search(r'jpg(.*?)TIDES', x).group(0)
 tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
 for tuple in tuples:
  print tuple[1]
