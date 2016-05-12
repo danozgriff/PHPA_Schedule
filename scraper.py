@@ -5,7 +5,7 @@ import re
 u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping_Schedule.pdf")
  
 x=scraperwiki.pdftoxml(u.read())
-#print x
+print x
 #r=lxml.etree.fromstring(x)
 #r.xpath('//page[@number="1"]')
 #r.xpath('//text[@left="64"]/b')[0:10]
@@ -13,11 +13,11 @@ x=scraperwiki.pdftoxml(u.read())
 
 #html = response.read()
 #test1 = re.search(r'(.*?)<br \/><\/div>', x).group()
-tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', x)
-for tuple in tuples:
- print tuple[1]
- print tuple[2]
- print tuple[3]
+#tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', x)
+#for tuple in tuples:
+# print tuple[1]
+# print tuple[2]
+# print tuple[3]
 #str(test1.replace(" ", "")).replace("><", ""))
 #tuples = re.findall(r'(\">|\'>|img\/)(.*?)(<\/|\.gif)', str(test1.replace(" ", "")).replace("><", ""))
 
