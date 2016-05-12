@@ -34,9 +34,11 @@ for tuple in tuples:
   if obj[:2] == '27|':
    print row
    row = ''
+   obj = ''
    row = row + obj
   else:
    row = row + obj
+   obj = ''
   
   #sys.stdout.write('|') 
  cnt=cnt+1
