@@ -20,7 +20,8 @@ for tuple in tuples:
  elif cnt == 1:
   obj = obj + '||' + tuple[2].strip(' ')
  else:
-  obj = obj + '|||' + tuple[2][:tuple[2].find('   ')+2]
+  y=tuple[2].find('   ')+1
+  obj = obj + '|||' + tuple[2][:y]
   
   cnt=-1
   
