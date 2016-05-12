@@ -23,7 +23,7 @@ cnt=0
 for tuple in tuples:
  if cnt == 2:
   print tuple[2]
-  cnt=0
+  cnt=-1
  else:
   sys.stdout.write(tuple[2])
   sys.stdout.write(',') 
