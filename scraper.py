@@ -1,5 +1,6 @@
 import scraperwiki, urllib2
 import lxml
+import re
 
 u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping_Schedule.pdf")
  
