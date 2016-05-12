@@ -26,7 +26,7 @@ for tuple in tuples:
   cnt=-1
  else:
   sys.stdout.write(tuple[2])
-  sys.stdout.write(',') 
+  sys.stdout.write('|') 
  cnt=cnt+1
 # sys.stdout.write(tuple[2])
  #print(tuple[2],end="")
