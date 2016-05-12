@@ -20,9 +20,9 @@ for tuple in tuples:
  elif cnt == 1:
   obj = obj + '||' + tuple[2].strip(' ')
  else:
-  y=tuple[2].find('  ')+1
-  obj = obj + '|||' + tuple[2][:y]
-  
+  #y=tuple[2].find('  ')+1
+  #obj = obj + '|||' + tuple[2][:y]
+  obj = obj + '|||' + tuple[2].strip(' ')
   cnt=-1
   
   if delim==0 and obj[:3] == '|27':
