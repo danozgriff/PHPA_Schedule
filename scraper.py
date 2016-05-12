@@ -15,6 +15,7 @@ obj = ''
 row=''
 delim=0
 for tuple in tuples:
+ print tuple[2]
  if cnt == 0:
   obj = obj + '|' + tuple[2].strip(' ')
  elif cnt == 1:
