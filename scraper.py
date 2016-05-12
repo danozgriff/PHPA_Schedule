@@ -25,7 +25,7 @@ for tuple in tuples:
   obj = obj + '|||' + tuple[2].strip(' ')
   cnt=-1
   
-  if delim==0 and obj[:3] == '|27':
+  if (delim==0 and int(obj[1:3]) between 27 and 29):
    record = re.search(r'\|\|\|((.|\n)+)', obj).group(0)
    print record
    #print row
