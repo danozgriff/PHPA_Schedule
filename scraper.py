@@ -28,10 +28,10 @@ for tuple in tuples:
  else:
   #sys.stdout.write(tuple[2])
   obj = obj + tuple[2]
-  print obj
+  #print obj
   cnt=-1
   
-  if obj[:3] == '27|':
+  if obj[:4] == '|27|':
    print row
    row = obj
    obj = '|'
