@@ -24,10 +24,10 @@ obj = ''
 row=''
 for tuple in tuples:
  if cnt <> 2:
-  obj = obj + '||' + tuple[2]
+  obj = obj + '|' + tuple[2] + '|'
  else:
   #sys.stdout.write(tuple[2])
-  obj = obj + '|' + tuple[2] + '|'
+  obj = obj + '||' + tuple[2]
   print obj
   cnt=-1
   
