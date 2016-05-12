@@ -1,6 +1,7 @@
 import scraperwiki, urllib2
 import lxml
 import re
+import sys
 
 u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping_Schedule.pdf")
  
@@ -20,7 +21,8 @@ test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
 for tuple in tuples:
 # print tuple[1]
- print(tuple[2],end="")
+ sys.stdout.write(tuple[2])
+ #print(tuple[2],end="")
  #,flush=True
 # print tuple[3]
 #str(test1.replace(" ", "")).replace("><", ""))
