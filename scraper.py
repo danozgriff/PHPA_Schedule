@@ -21,7 +21,7 @@ test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 tuples = re.findall(r'((left="|width="|">)(.*?)(</text>|"))', test1)
 cnt=0
 for tuple in tuples:
- if cnt == 2 then
+ if cnt == 2:
   print tuple[2]
   cnt=0
  else:
