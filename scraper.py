@@ -20,8 +20,8 @@ test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
 for tuple in tuples:
-# print tuple[1]
- sys.stdout.write(tuple[2])
+ print tuple[2]
+# sys.stdout.write(tuple[2])
  #print(tuple[2],end="")
  #,flush=True
 # print tuple[3]
