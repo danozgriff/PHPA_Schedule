@@ -34,7 +34,8 @@ for tuple in tuples:
   
   if delim==0 and obj[:3] == '|27':
    record = re.search(r'\|\|\|((.|\n)+)', obj).group(0)
-   print row
+   print record
+   #print row
    
    row = obj
    obj = ''
