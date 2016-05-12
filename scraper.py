@@ -22,20 +22,20 @@ tuples = re.findall(r'((left="|width="|">)(.*?)(</text>|"))', test1.replace('<b>
 cnt=0
 obj = ''
 row=''
+delim=0
 for tuple in tuples:
  if cnt == 0:
-  obj = obj + '|A|' + tuple[2].strip(' ')
+  obj = obj + '|' + tuple[2].strip(' ')
  elif cnt == 1:
-  obj = obj + '|B|' + tuple[2].strip(' ')
+  obj = obj + '||' + tuple[2].strip(' ')
  else:
-  #sys.stdout.write(tuple[2])
-  obj = obj + '|C|' + tuple[2].strip(' ')
-  #print obj
+  obj = obj + '|||' + tuple[2].strip(' ')
   cnt=-1
   
-  if obj[:5] == '|A|27':
-   
+  if delim==0 and obj[:3] == '|27':
+   record = re.search(r'\|\|\|((.|\n)+)', obj).group(0)
    print row
+   
    row = obj
    obj = ''
   else:
