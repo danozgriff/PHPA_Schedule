@@ -29,7 +29,7 @@ for tuple in tuples:
  elif cnt == 1:
   obj = obj + '||' + tuple[2].strip(' ')
  else:
-  obj = obj + '|||' + tuple[2].strip(' ')
+  obj = obj + '|||' + tuple[2].strip(' ').replace('  ', ' ')
   cnt=-1
   
   if delim==0 and obj[:3] == '|27':
