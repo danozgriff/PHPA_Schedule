@@ -14,14 +14,14 @@ x=scraperwiki.pdftoxml(u.read())
 #html = response.read()
 #print r
 #test1 = re.search('pdf2xml(.*?)</page>', x).group()
-test1 = re.search(r'jpg((.|\n)+)TIDES', x)
-print test1
+test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
+#print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
-#tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
-#for tuple in tuples:
-# print tuple[1]
-# print tuple[2]
-# print tuple[3]
+tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
+for tuple in tuples:
+ print tuple[1]
+ print tuple[2]
+ print tuple[3]
 #str(test1.replace(" ", "")).replace("><", ""))
 #tuples = re.findall(r'(\">|\'>|img\/)(.*?)(<\/|\.gif)', str(test1.replace(" ", "")).replace("><", ""))
 
