@@ -18,7 +18,7 @@ x=scraperwiki.pdftoxml(u.read())
 test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 #print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
-tuples = re.findall(r'((left="|width="|">)(.*?)(</text>|"))', test1)
+tuples = re.findall(r'((left="|width="|">)(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
 cnt=0
 obj = ''
 row=''
