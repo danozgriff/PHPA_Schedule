@@ -12,7 +12,7 @@ x=scraperwiki.pdftoxml(u.read())
 #r.xpath('//text[@left="64"]/b')[8].text
 
 #html = response.read()
-print r
+#print r
 test1 = re.search('pdf2xml(.*?)</page>', x).group()
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
