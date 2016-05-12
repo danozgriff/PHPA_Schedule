@@ -23,16 +23,17 @@ cnt=0
 obj = ''
 row=''
 for tuple in tuples:
- if cnt <> 2:
-  obj = obj + '|' + tuple[2] + '|'
+ if cnt == 0:
+  obj = obj + '|A|' + tuple[2].strip(' ')
+ elif cnt == 1:
+  obj = obj + '|B|' + tuple[2].strip(' ')
  else:
   #sys.stdout.write(tuple[2])
-  obj = obj + '||' + tuple[2]
+  obj = obj + '|C|' + tuple[2].strip(' ')
   #print obj
   cnt=-1
   
-  if obj[:4] == '|27|':
-   
+  if obj[:5] == '|A|27':
    
    print row
    row = obj
