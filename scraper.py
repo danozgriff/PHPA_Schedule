@@ -20,24 +20,26 @@ test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|width="|">)(.*?)(</text>|"))', test1)
 cnt=0
-obj = '|'
+obj = ''
 row=''
 for tuple in tuples:
  if cnt <> 2:
-  obj = obj + tuple[2] + '|'
+  obj = obj + '||' tuple[2]
  else:
   #sys.stdout.write(tuple[2])
-  obj = obj + tuple[2]
+  obj = obj + '|' + tuple[2] + '|'
   #print obj
   cnt=-1
   
   if obj[:4] == '|27|':
+   
+   
    print row
    row = obj
-   obj = '|'
+   obj = ''
   else:
    row = row + obj
-   obj = '|'
+   obj = ''
   
   #sys.stdout.write('|') 
  cnt=cnt+1
