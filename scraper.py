@@ -6,14 +6,14 @@ u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping
  
 x=scraperwiki.pdftoxml(u.read())
 #print x
-r=lxml.etree.fromstring(x)
+#r=lxml.etree.fromstring(x)
 #r.xpath('//page[@number="1"]')
 #r.xpath('//text[@left="64"]/b')[0:10]
 #r.xpath('//text[@left="64"]/b')[8].text
 
 #html = response.read()
 print r
-test1 = re.search('jpg(.*?)TIDES', r).group()
+test1 = re.search('pdf2xml(.*?)</page>', x).group()
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
 for tuple in tuples:
