@@ -13,7 +13,8 @@ x=scraperwiki.pdftoxml(u.read())
 
 #html = response.read()
 #print r
-test1 = re.search('pdf2xml(.*?)</page>', x).group()
+#test1 = re.search('pdf2xml(.*?)</page>', x).group()
+test1 = re.search(r'jpg((.|\n)+)TIDES', x)
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|width="|<b>)(.*?)(</b>|"))', test1)
 for tuple in tuples:
