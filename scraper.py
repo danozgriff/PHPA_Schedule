@@ -6,15 +6,6 @@ import sys
 u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping_Schedule.pdf")
  
 x=scraperwiki.pdftoxml(u.read())
-#print x
-#r=lxml.etree.fromstring(x)
-#r.xpath('//page[@number="1"]')
-#r.xpath('//text[@left="64"]/b')[0:10]
-#r.xpath('//text[@left="64"]/b')[8].text
-
-#html = response.read()
-#print r
-#test1 = re.search('pdf2xml(.*?)</page>', x).group()
 test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
 #print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
@@ -29,7 +20,7 @@ for tuple in tuples:
  elif cnt == 1:
   obj = obj + '||' + tuple[2].strip(' ')
  else:
-  obj = obj + '|||' + tuple[2][:tuple[2].find('  ')].strip(' ')
+  obj = obj + '|||' + tuple[2][:tuple[2].find('  ')]
   
   cnt=-1
   
