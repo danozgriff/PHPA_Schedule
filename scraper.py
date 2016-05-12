@@ -13,7 +13,7 @@ print Schedule_Date
 
 # Scan PDF
 test1 = re.search(r'VESSEL((.|\n)+)TIDES', x).group(0)
-print test1
+#print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|width="|">)(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
 cnt=0
@@ -21,7 +21,7 @@ obj = ''
 row=''
 delim=0
 for tuple in tuples:
- ##print tuple[2]
+ print tuple[2]
  if cnt == 0:
   obj = obj + '|' + tuple[2].strip(' ')
  elif cnt == 1:
