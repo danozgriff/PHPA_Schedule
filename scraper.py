@@ -55,23 +55,22 @@ for tuple in tuples:
   cnt=cnt+1
 
    
-  elif cnt == 1:
-   cnt = 0
-  cnt=cnt+1
 
  if cnt == 0:
-  obj = obj + '|' + tuple[2].strip(' ')
+  obj = tuple[2].strip(' ')
+  cnt=cnt+1
  elif cnt == 1:
   #y=tuple[2].find('  ')+1
   #obj = obj + '|||' + tuple[2][:y]
-  obj = obj + '||' + tuple[2].strip(' ')
-  cnt=-1
+  obj = obj + '|' + tuple[2].strip(' ')
+  cnt=0
+
   
   
   
-  if (delim==0 and int(obj[1:3]) >= 26 and int(obj[1:3]) <= 30):
-   record = re.search(r'\|\|\|((.|\n)+)', obj).group(0)
-   ##print record
+  if (delim==0 and int(obj[:obj.find('|')]) < DWT):
+   record = re.search(r'\|((.|\n)+)', obj).group(0)
+   print record
 
    
    row = obj
