@@ -31,7 +31,7 @@ for tuple in tuples:
   print obj
   cnt=-1
   
-  if obj[:2] == '27|':
+  if obj[:3] == '27|':
    print row
    row = ''
    obj = ''
