@@ -6,12 +6,14 @@ import sys
 u=urllib2.urlopen("http://pilbaraports.com.au/Shipping_Schedule/Current_Shipping_Schedule.pdf")
  
 x=scraperwiki.pdftoxml(u.read())
-test = re.search(r'jpg((.|\n)+)</text>', x).group(0)
-#<b>THURSDAY 12th MAY 2016          </b>
-test2 = re.search(r'<b>(.*?)</b>', test).group(0).replace('<b>', '').replace('</b>', '').strip(' ')
-print test2
-test1 = re.search(r'jpg((.|\n)+)TIDES', x).group(0)
-#print test1
+# Get Schedule Date
+Schedule_Date = re.search(r'jpg((.|\n)+)</text>', x).group(0)
+Schedule_Date = re.search(r'<b>(.*?)</b>', test).group(0).replace('<b>', '').replace('</b>', '').strip(' ')
+print Schedule_Date
+
+# Scan PDF
+test1 = re.search(r'VESSEL((.|\n)+)TIDES', x).group(0)
+print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|width="|">)(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
 cnt=0
