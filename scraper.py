@@ -134,10 +134,10 @@ for tuple in tuples:
      lineout = lineout + ','
      colcnt=colcnt+1
     
-    if colcnt > 13:
-     print lineout[:-1]
-     colcnt = 0
-     lineout=''
+   if colcnt > 13:
+    print lineout[:-1]
+    colcnt = 0
+    lineout=''
 
  cnt=cnt+1
  alignment=0
