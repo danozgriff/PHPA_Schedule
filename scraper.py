@@ -57,8 +57,10 @@ for tuple in tuples:
  if headers==0 and cnt >= 0:
   if cnt == 0:
    obj = tuple[2].strip(' ')
+   print 'in: cnt=0'
    #cnt=cnt+1
   elif cnt == 1:
+   print 'in: cnt=1'
    #y=tuple[2].find('  ')+1
    #obj = obj + '|||' + tuple[2][:y]
    obj = obj + '|' + tuple[2].strip(' ')
@@ -71,6 +73,7 @@ for tuple in tuples:
    #print int(obj[:obj.find('|')])
   
    if (delim==0 and int(obj[:obj.find('|')]) < DWT):
+    print 'in: delim'
     record = re.search(r'\|((.|\n)+)', obj).group(0)
     print record
 
