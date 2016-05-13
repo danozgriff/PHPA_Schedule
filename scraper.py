@@ -27,31 +27,31 @@ for tuple in tuples:
   if cnt == 0:
    DWT = tuple[2].strip(' ') #int
    print 'dwt:' + DWT
-  elif cnt == 2:
+  elif cnt == 1:
    AGENT = tuple[2].strip(' ') #int
    print 'agent:' + AGENT
-  elif cnt == 4:
+  elif cnt == 2:
    ETA = int(tuple[2].strip(' '))
    print 'eta:' + ETA
-  elif cnt == 6:
+  elif cnt == 3:
    FROM = int(tuple[2].strip(' '))
-  elif cnt == 8:
+  elif cnt == 4:
    TO = int(tuple[2].strip(' '))
-  elif cnt == 10:
+  elif cnt == 5:
    VHF = int(tuple[2].strip(' '))
-  elif cnt == 12:
+  elif cnt == 6:
    PILOT = int(tuple[2].strip(' '))
-  elif cnt == 14:
+  elif cnt == 7:
    HARBOUR_PV = int(tuple[2].strip(' '))
-  elif cnt == 16:
+  elif cnt == 8:
    HC_OR_PV = int(tuple[2].strip(' '))
-  elif cnt == 18:
+  elif cnt == 9:
    POB = int(tuple[2].strip(' '))
-  elif cnt == 20:
+  elif cnt == 10:
    TUGS = int(tuple[2].strip(' '))
-  elif cnt == 22:
+  elif cnt == 11:
    BPN_DPN = int(tuple[2].strip(' '))
-  elif cnt == 24:
+  elif cnt == 12:
    REMARKS = int(tuple[2].strip(' '))
    headers=0
    cnt=0
