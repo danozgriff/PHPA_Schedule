@@ -133,6 +133,7 @@ for tuple in tuples:
    if colcnt > 12:
     print lineout[:-1]
     colcnt = 0
+    lineout=''
 
  cnt=cnt+1
   
