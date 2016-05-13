@@ -45,7 +45,7 @@ for tuple in tuples:
   elif cnt == 9:
    POB = int(tuple[2].strip(' '))
   elif cnt == 10:
-   TUGS = int(tuple[2].strip(' ')) #int
+   TUGS = tuple[2].strip(' ') #int
    print 'tugs' + TUGS
   elif cnt == 11:
    BPN_DPN = int(tuple[2].strip(' '))
