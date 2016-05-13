@@ -65,7 +65,7 @@ for tuple in tuples:
    print 'in: cnt=1'
    #y=tuple[2].find('  ')+1
    #obj = obj + '|||' + tuple[2][:y]
-   obj = obj + '|' + tuple[2].strip(' ')
+   obj = tuple[2].strip(' ') + '|' + obj
    cnt=0
 
   
