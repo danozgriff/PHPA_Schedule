@@ -57,11 +57,11 @@ for tuple in tuples:
    REMARKS = (tuple[2].strip(' '))
    print 'REMARKS ' + REMARKS
    headers=0
-   cnt=0
+   cnt=-2
   cnt=cnt+1
 
    
- if headers==0:
+ if headers==0 and count >= 0:
   if cnt == 0:
    obj = tuple[2].strip(' ')
    cnt=cnt+1
