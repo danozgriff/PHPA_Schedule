@@ -129,7 +129,7 @@ for tuple in tuples:
      lineout = lineout + obj + ','
      colcnt=colcnt+1
      alignment=1
-     print CONFIRMED: 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
+     print 'CONFIRMED: ' + 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
     else:
      print 'NO VALUE'
      lineout = lineout + ','
