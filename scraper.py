@@ -26,13 +26,10 @@ for tuple in tuples:
  if headers==1:
   if cnt == 0:
    DWT = tuple[2].strip(' ') #int
-   print 'dwt:' + DWT
   elif cnt == 1:
    AGENT = tuple[2].strip(' ') #int
-   print 'agent:' + AGENT
   elif cnt == 2:
    ETA = int(tuple[2].strip(' '))
-   print 'eta:' + ETA
   elif cnt == 3:
    FROM = int(tuple[2].strip(' '))
   elif cnt == 4:
