@@ -42,18 +42,18 @@ for tuple in tuples:
   elif cnt == 7:
    HARBOUR_PV = (tuple[2].strip(' '))
    print 'HARBOUR_PV ' + HARBOUR_PV
-  elif cnt == 8:
+  elif cnt == 9:
    HC_OR_PV = tuple[2].strip(' ')
    print 'HC_OR_PV ' + HC_OR_PV
-  elif cnt == 9:
+  elif cnt == 11:
    POB = tuple[2].strip(' ')
    print 'POB ' + POB
-  elif cnt == 10:
+  elif cnt == 12:
    TUGS = tuple[2].strip(' ') #int
    print 'TUGS ' + TUGS
-  elif cnt == 11:
+  elif cnt == 13:
    BPN_DPN = int(tuple[2].strip(' '))
-  elif cnt == 12:
+  elif cnt == 14:
    REMARKS = int(tuple[2].strip(' '))
    headers=0
    cnt=0
