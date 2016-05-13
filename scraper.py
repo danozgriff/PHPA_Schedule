@@ -36,67 +36,67 @@ for tuple in tuples:
    print 'VESSEL: ' + tuple[2].strip(' ')
   if cnt == 2:
    #DWT = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))-3)
    print 'DWT: ' + tuple[2].strip(' ')
   elif cnt == 4:
    #AGENT = int(tuple[2].strip(' ')) 
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))+4)
    print 'AGENT: ' + tuple[2].strip(' ')
   elif cnt == 6:
    #ETA = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))+1)
    print 'ETA: ' + tuple[2].strip(' ')
   elif cnt == 8:
    #FROM = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))+5)
    print 'FROM: ' + tuple[2].strip(' ')
   elif cnt == 10:
    #TO = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))-2)
    print 'TO: ' + tuple[2].strip(' ')
   elif cnt == 12:
    #VHF = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))+6)
    print 'VHF: ' + tuple[2].strip(' ')
   elif cnt == 14:
    #PILOT = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))+9)
    print 'PILOT: ' + tuple[2].strip(' ')
   elif cnt == 16:
    #HARBOUR_PV = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))+7)
    print 'HARBOUR_PV: ' + tuple[2].strip(' ')
   elif cnt == 20:
    #HC_OR_PV = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))-2)
    print 'HC_OR_PV: ' + tuple[2].strip(' ')
   elif cnt == 24:
    #POB = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))+1)
    print 'POB: ' + tuple[2].strip(' ')
   elif cnt == 26:
    #TUGS = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))+7)
    print 'TUGS: ' + tuple[2].strip(' ')
   elif cnt == 28:
    #BPN_DPN = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))-3)
    print 'BPN_DPN: ' + tuple[2].strip(' ')
   elif cnt == 32:
    #REMARKS = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))-89)
    print 'REMARKS: ' + tuple[2].strip(' ')
    headers=0
    #print 'Headers End: ' + tuple[2].strip(' ')
@@ -125,7 +125,7 @@ for tuple in tuples:
    #print loc
 
    while alignment==0: 
-    if loc >= HeadersList[colcnt]-10 and loc <= HeadersList[colcnt]+10:
+    if loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5:
      lineout = lineout + obj + ','
      print 'CONFIRMED: ' + 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
      colcnt=colcnt+1
