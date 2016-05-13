@@ -70,6 +70,10 @@ for tuple in tuples:
   
    print tuple[1]
    print tuple[2]
+   print tuple[3]
+   print tuple[4]
+   print tuple[5]
+   print tuple[6]
    print obj
    print obj.find('|')
    #print int(obj[:obj.find('|')])
