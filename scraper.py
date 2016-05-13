@@ -25,11 +25,11 @@ for tuple in tuples:
 
  if headers==1:
   if cnt == 0:
-   DWT = int(tuple[2].strip(' '))
+   DWT = tuple[2].strip(' ') #int
    print 'dwt:' + DWT
   elif cnt == 2:
-   AGENT = int(tuple[2].strip(' '))
-   print 'agent:' + agent
+   AGENT = tuple[2].strip(' ') #int
+   print 'agent:' + AGENT
   elif cnt == 4:
    ETA = int(tuple[2].strip(' '))
    print 'eta:' + ETA
