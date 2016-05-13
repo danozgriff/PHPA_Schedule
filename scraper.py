@@ -32,7 +32,7 @@ for tuple in tuples:
  if headers==1:
   if cnt == 0:
    #DWT = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' ')))
+   HeadersList.append(int(tuple[2].strip(' '))-68)
    print 'VESSEL: ' + tuple[2].strip(' ')
   if cnt == 2:
    #DWT = int(tuple[2].strip(' '))
