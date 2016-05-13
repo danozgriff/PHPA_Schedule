@@ -23,7 +23,7 @@ delim=0
 headers=1
 for tuple in tuples:
 
-print 'Testing: ' + tuple[2]
+ print 'Testing: ' + tuple[2]
 
  if headers==1:
   if cnt == 0:
