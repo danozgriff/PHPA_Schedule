@@ -100,7 +100,7 @@ for tuple in tuples:
    headers=0
    #print 'Headers End: ' + tuple[2].strip(' ')
    #hdcnt=-1
-   cnt=-1
+   cnt=-2
   #hdcnt=hdcnt+1
 
    
@@ -120,7 +120,7 @@ for tuple in tuples:
    
    print 'loc: ' + str(loc) + ' obj: ' + obj
    #print colcnt
-   print 'HeadersList Val: ' + HeadersList[colcnt]
+   print 'HeadersList Val: ' + str(HeadersList[colcnt])
    #print loc
 
    if loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5:
