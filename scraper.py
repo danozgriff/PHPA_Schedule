@@ -68,6 +68,8 @@ for tuple in tuples:
 
   
   
+   print tuple[1]
+   print tuple[2]
    print obj
    print obj.find('|')
    #print int(obj[:obj.find('|')])
