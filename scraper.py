@@ -54,7 +54,8 @@ for tuple in tuples:
   elif cnt == 13:
    BPN_DPN = int(tuple[2].strip(' '))
   elif cnt == 15:
-   REMARKS = int(tuple[2].strip(' '))
+   REMARKS = (tuple[2].strip(' '))
+   print 'REMARKS ' + REMARKS
    headers=0
    cnt=0
   cnt=cnt+1
