@@ -98,16 +98,16 @@ for tuple in tuples:
    cnt=-1
    #hdcnt=hdcnt+1
 
-   if loc >= HeadersList[hdcnt]-2 and loc <= HeadersList[hdcnt]-2:
+   if loc >= HeadersList[colcnt]-2 and loc <= HeadersList[colcnt]-2:
     lineout = lineout + obj + ','
-    hdcnt=hdcnt+1
+    colcnt=colcnt+1
    else:
     lineout = lineout + ','
-    hdcnt=hdcnt+1
+    colcnt=colcnt+1
    
-   if hdcnt > 14:
+   if colcnt > 14:
     print lineout[:-1]
-    hdcnt = 0
+    colcnt = 0
 
  cnt=cnt+1
   
