@@ -99,11 +99,12 @@ for tuple in tuples:
    cnt=-1
    #hdcnt=hdcnt+1
    
-   print colcnt
-   print HeadersList[colcnt]
-   print loc
+   print 'loc: ' + str(loc) + ' obj: ' + obj
+   #print colcnt
+   #print HeadersList[colcnt]
+   #print loc
 
-   if loc >= HeadersList[colcnt]-2 and loc <= HeadersList[colcnt]+2:
+   if loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5:
     lineout = lineout + obj + ','
     colcnt=colcnt+1
    else:
