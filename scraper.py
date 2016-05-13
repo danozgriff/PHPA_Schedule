@@ -107,12 +107,12 @@ for tuple in tuples:
  if headers==0 and cnt >= 0:
   #print 'Main End: ' + tuple[2].strip(' ')
   if cnt == 0:
-   obj = tuple[2].strip(' ')
+   loc = tuple[2].strip(' ')
    #obj = tuple[2].strip(' ')
    #print 'in: cnt=0'
    #cnt=cnt+1
   elif cnt == 1:
-   loc = tuple[2].strip(' ')
+   obj = tuple[2].strip(' ')
    #print 'in: cnt=1'
    #obj = tuple[2].strip(' ') + '|' + obj
    cnt=-1
@@ -127,6 +127,7 @@ for tuple in tuples:
     lineout = lineout + obj + ','
     colcnt=colcnt+1
    else:
+    print 'NO VALUE'
     lineout = lineout + ','
     colcnt=colcnt+1
    
