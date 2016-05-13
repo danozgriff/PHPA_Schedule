@@ -85,7 +85,7 @@ for tuple in tuples:
     obj = ''
   
   
-  cnt=cnt+1
+ cnt=cnt+1
   
    #sys.stdout.write('|') 
   #cnt=cnt+1
