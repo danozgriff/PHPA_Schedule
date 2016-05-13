@@ -37,34 +37,27 @@ for tuple in tuples:
   elif cnt == 5:
    VHF = int(tuple[2].strip(' '))
   elif cnt == 6:
-   PILOT = (tuple[2].strip(' '))
-   print 'PILOT ' + PILOT
+   PILOT = int(tuple[2].strip(' '))
   elif cnt == 7:
-   HARBOUR_PV = (tuple[2].strip(' '))
-   print 'HARBOUR_PV ' + HARBOUR_PV
+   HARBOUR_PV = int(tuple[2].strip(' '))
   elif cnt == 9:
-   HC_OR_PV = tuple[2].strip(' ')
-   print 'HC_OR_PV ' + HC_OR_PV
+   HC_OR_PV = int(tuple[2].strip(' '))
   elif cnt == 11:
-   POB = tuple[2].strip(' ')
-   print 'POB ' + POB
+   POB = int(tuple[2].strip(' '))
   elif cnt == 12:
-   TUGS = tuple[2].strip(' ') #int
-   print 'TUGS ' + TUGS
+   TUGS = int(tuple[2].strip(' '))
   elif cnt == 13:
    BPN_DPN = int(tuple[2].strip(' '))
   elif cnt == 15:
-   REMARKS = (tuple[2].strip(' '))
-   print 'REMARKS ' + REMARKS
+   REMARKS = int(tuple[2].strip(' '))
    headers=0
-   cnt=-2
-  cnt=cnt+1
+   cnt=-1
 
    
  if headers==0 and cnt >= 0:
   if cnt == 0:
    obj = tuple[2].strip(' ')
-   cnt=cnt+1
+   #cnt=cnt+1
   elif cnt == 1:
    #y=tuple[2].find('  ')+1
    #obj = obj + '|||' + tuple[2][:y]
@@ -87,7 +80,10 @@ for tuple in tuples:
    else:
     row = row + obj
     obj = ''
-   
+  
+  
+  cnt=cnt+1
+  
    #sys.stdout.write('|') 
   #cnt=cnt+1
  # sys.stdout.write(tuple[2])
