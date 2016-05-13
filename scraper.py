@@ -19,6 +19,7 @@ tuples = re.findall(r'((left="|">)(.*?)(</text>|"))', test1.replace('<b>', '').r
 cnt=0
 obj = ''
 row=''
+lineout=''
 headers=1
 colcnt=0
 #hdcnt=0
