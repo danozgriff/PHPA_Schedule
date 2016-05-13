@@ -28,29 +28,29 @@ for tuple in tuples:
  if headers==1:
   if cnt == 0:
    DWT = int(tuple[2].strip(' '))
-  elif cnt == 1:
-   AGENT = int(tuple[2].strip(' ')) 
   elif cnt == 2:
-   ETA = int(tuple[2].strip(' '))
-  elif cnt == 3:
-   FROM = int(tuple[2].strip(' '))
+   AGENT = int(tuple[2].strip(' ')) 
   elif cnt == 4:
-   TO = int(tuple[2].strip(' '))
-  elif cnt == 5:
-   VHF = int(tuple[2].strip(' '))
+   ETA = int(tuple[2].strip(' '))
   elif cnt == 6:
-   PILOT = int(tuple[2].strip(' '))
-  elif cnt == 7:
-   HARBOUR_PV = int(tuple[2].strip(' '))
-  elif cnt == 9:
-   HC_OR_PV = int(tuple[2].strip(' '))
-  elif cnt == 11:
-   POB = int(tuple[2].strip(' '))
+   FROM = int(tuple[2].strip(' '))
+  elif cnt == 8:
+   TO = int(tuple[2].strip(' '))
+  elif cnt == 10:
+   VHF = int(tuple[2].strip(' '))
   elif cnt == 12:
+   PILOT = int(tuple[2].strip(' '))
+  elif cnt == 14:
+   HARBOUR_PV = int(tuple[2].strip(' '))
+  elif cnt == 18:
+   HC_OR_PV = int(tuple[2].strip(' '))
+  elif cnt == 22:
+   POB = int(tuple[2].strip(' '))
+  elif cnt == 24:
    TUGS = int(tuple[2].strip(' '))
-  elif cnt == 13:
+  elif cnt == 26:
    BPN_DPN = int(tuple[2].strip(' '))
-  elif cnt == 15:
+  elif cnt == 30:
    REMARKS = int(tuple[2].strip(' '))
    headers=0
    cnt=-1
