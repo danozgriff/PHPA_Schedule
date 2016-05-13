@@ -108,7 +108,7 @@ for tuple in tuples:
     lineout = lineout + ','
     colcnt=colcnt+1
    
-   if colcnt > 14:
+   if colcnt > 13:
     print lineout[:-1]
     colcnt = 0
 
