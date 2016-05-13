@@ -53,7 +53,7 @@ for tuple in tuples:
    print 'TUGS ' + TUGS
   elif cnt == 13:
    BPN_DPN = int(tuple[2].strip(' '))
-  elif cnt == 14:
+  elif cnt == 15:
    REMARKS = int(tuple[2].strip(' '))
    headers=0
    cnt=0
