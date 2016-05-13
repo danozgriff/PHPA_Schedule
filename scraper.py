@@ -61,7 +61,7 @@ for tuple in tuples:
   cnt=cnt+1
 
    
- if headers==0 and count >= 0:
+ if headers==0 and cnt >= 0:
   if cnt == 0:
    obj = tuple[2].strip(' ')
    cnt=cnt+1
