@@ -12,68 +12,83 @@ Schedule_Date = re.search(r'<b>(.*?)</b>', Schedule_Date).group(0).replace('<b>'
 print Schedule_Date
 
 # Scan PDF
-test1 = re.search(r'VESSEL((.|\n)+)TIDES', x).group(0)
+test1 = re.search(r'Duty Helo:((.|\n)+)TIDES', x).group(0)
 #print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|">)(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
 cnt=0
 obj = ''
 row=''
-delim=0
 headers=1
+colcnt=0
+hdcnt=0
 for tuple in tuples:
 
  print 'Testing: ' + tuple[2]
 
  if headers==1:
   if cnt == 0:
-   DWT = int(tuple[2].strip(' '))
+   #DWT = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 2:
-   AGENT = int(tuple[2].strip(' ')) 
+   #AGENT = int(tuple[2].strip(' ')) 
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 4:
-   ETA = int(tuple[2].strip(' '))
+   #ETA = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 6:
-   FROM = int(tuple[2].strip(' '))
+   #FROM = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 8:
-   TO = int(tuple[2].strip(' '))
+   #TO = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 10:
-   VHF = int(tuple[2].strip(' '))
+   #VHF = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 12:
-   PILOT = int(tuple[2].strip(' '))
+   #PILOT = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 14:
-   HARBOUR_PV = int(tuple[2].strip(' '))
+   #HARBOUR_PV = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 18:
-   HC_OR_PV = int(tuple[2].strip(' '))
+   #HC_OR_PV = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 22:
-   POB = int(tuple[2].strip(' '))
+   #POB = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 24:
-   TUGS = int(tuple[2].strip(' '))
+   #TUGS = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 26:
-   BPN_DPN = int(tuple[2].strip(' '))
+   #BPN_DPN = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
   elif cnt == 30:
-   REMARKS = int(tuple[2].strip(' '))
+   #REMARKS = int(tuple[2].strip(' '))
+   HeadersList[hdcnt] = int(tuple[2].strip(' '))
    headers=0
+   hdcnt=-1
    cnt=-1
+  hdcnt=hdcnt+1
 
    
  if headers==0 and cnt >= 0:
   if cnt == 0:
    obj = tuple[2].strip(' ')
-   print 'in: cnt=0'
+   #print 'in: cnt=0'
    #cnt=cnt+1
   elif cnt == 1:
-   print 'in: cnt=1'
-   #y=tuple[2].find('  ')+1
-   #obj = obj + '|||' + tuple[2][:y]
+   #print 'in: cnt=1'
    obj = tuple[2].strip(' ') + '|' + obj
-   cnt=0
-
+   cnt=-1
+   hdcnt=hdcnt+1
 
   
    if (delim==0 and int(obj[:obj.find('|')]) < DWT):
     print 'in: delim'
     record = re.search(r'\|((.|\n)+)', obj).group(0)[1:]
     print record
+    colcnt=colcnt+1
 
    
     row = obj
