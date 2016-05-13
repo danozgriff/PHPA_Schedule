@@ -37,16 +37,20 @@ for tuple in tuples:
   elif cnt == 5:
    VHF = int(tuple[2].strip(' '))
   elif cnt == 6:
-   PILOT = int(tuple[2].strip(' '))
+   PILOT = (tuple[2].strip(' '))
+   print 'PILOT ' + PILOT
   elif cnt == 7:
-   HARBOUR_PV = int(tuple[2].strip(' '))
+   HARBOUR_PV = (tuple[2].strip(' '))
+   print 'HARBOUR_PV ' + HARBOUR_PV
   elif cnt == 8:
-   HC_OR_PV = int(tuple[2].strip(' '))
+   HC_OR_PV = tuple[2].strip(' ')
+   print 'HC_OR_PV ' + HC_OR_PV
   elif cnt == 9:
-   POB = int(tuple[2].strip(' '))
+   POB = tuple[2].strip(' ')
+   print 'POB ' + POB
   elif cnt == 10:
    TUGS = tuple[2].strip(' ') #int
-   print 'tugs' + TUGS
+   print 'TUGS ' + TUGS
   elif cnt == 11:
    BPN_DPN = int(tuple[2].strip(' '))
   elif cnt == 12:
