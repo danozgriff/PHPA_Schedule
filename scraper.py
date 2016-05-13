@@ -88,12 +88,12 @@ for tuple in tuples:
    
  if headers==0 and cnt >= 0:
   if cnt == 0:
-   loc = tuple[2].strip(' ')
+   obj = tuple[2].strip(' ')
    #obj = tuple[2].strip(' ')
    #print 'in: cnt=0'
    #cnt=cnt+1
   elif cnt == 1:
-   obj = tuple[2].strip(' ')
+   loc = tuple[2].strip(' ')
    #print 'in: cnt=1'
    #obj = tuple[2].strip(' ') + '|' + obj
    cnt=-1
