@@ -81,12 +81,14 @@ for tuple in tuples:
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
    HeadersList.append(int(tuple[2].strip(' ')))
    headers=0
+   print 'Headers End: ' + tuple[2].strip(' ')
    #hdcnt=-1
    cnt=-1
   #hdcnt=hdcnt+1
 
    
  if headers==0 and cnt >= 0:
+  print 'Main End: ' + tuple[2].strip(' ')
   if cnt == 0:
    obj = tuple[2].strip(' ')
    #obj = tuple[2].strip(' ')
@@ -99,7 +101,7 @@ for tuple in tuples:
    cnt=-1
    #hdcnt=hdcnt+1
    
-   print 'loc: ' + str(loc) + ' obj: ' + obj
+   ##print 'loc: ' + str(loc) + ' obj: ' + obj
    #print colcnt
    #print HeadersList[colcnt]
    #print loc
@@ -112,7 +114,7 @@ for tuple in tuples:
     colcnt=colcnt+1
    
    if colcnt > 12:
-    print lineout[:-1]
+    #print lineout[:-1]
     colcnt = 0
 
  cnt=cnt+1
