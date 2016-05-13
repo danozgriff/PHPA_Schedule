@@ -24,6 +24,7 @@ headers=1
 colcnt=0
 #hdcnt=0
 HeadersList = []
+alignment=0
 for tuple in tuples:
 
  #print 'Testing: ' + tuple[2]
