@@ -102,7 +102,7 @@ for tuple in tuples:
    print colcnt
    
 
-   if loc >= HeadersList[colcnt]-2 and loc <= HeadersList[colcnt]-2:
+   if loc >= HeadersList[colcnt]-2 and loc <= HeadersList[colcnt]+2:
     lineout = lineout + obj + ','
     colcnt=colcnt+1
    else:
