@@ -124,19 +124,19 @@ for tuple in tuples:
    #print loc
 
    while alignment==0: 
-   if loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5:
-    lineout = lineout + obj + ','
-    colcnt=colcnt+1
-    alignment=1
-   else:
-    print 'NO VALUE'
-    lineout = lineout + ','
-    colcnt=colcnt+1
-   
-   if colcnt > 13:
-    print lineout[:-1]
-    colcnt = 0
-    lineout=''
+    if loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5:
+     lineout = lineout + obj + ','
+     colcnt=colcnt+1
+     alignment=1
+    else:
+     print 'NO VALUE'
+     lineout = lineout + ','
+     colcnt=colcnt+1
+    
+    if colcnt > 13:
+     print lineout[:-1]
+     colcnt = 0
+     lineout=''
 
  cnt=cnt+1
  alignment=0
