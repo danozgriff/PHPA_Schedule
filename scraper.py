@@ -26,10 +26,13 @@ for tuple in tuples:
  if headers==1:
   if cnt == 0:
    DWT = int(tuple[2].strip(' '))
+   print 'dwt:' + dwt
   elif cnt == 2:
    AGENT = int(tuple[2].strip(' '))
+   print 'agent:' + agent
   elif cnt == 4:
    ETA = int(tuple[2].strip(' '))
+   print 'eta:' + ETA
   elif cnt == 6:
    FROM = int(tuple[2].strip(' '))
   elif cnt == 8:
