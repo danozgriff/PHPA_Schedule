@@ -25,7 +25,7 @@ colcnt=0
 HeadersList = []
 for tuple in tuples:
 
- print 'Testing: ' + tuple[2]
+ #print 'Testing: ' + tuple[2]
 
  if headers==1:
   if cnt == 0:
@@ -87,31 +87,43 @@ for tuple in tuples:
    
  if headers==0 and cnt >= 0:
   if cnt == 0:
-   obj = tuple[2].strip(' ')
+   loc = tuple[2].strip(' ')
+   #obj = tuple[2].strip(' ')
    #print 'in: cnt=0'
    #cnt=cnt+1
   elif cnt == 1:
+   obj = tuple[2].strip(' ')
    #print 'in: cnt=1'
-   obj = tuple[2].strip(' ') + '|' + obj
+   #obj = tuple[2].strip(' ') + '|' + obj
    cnt=-1
    #hdcnt=hdcnt+1
 
+   if loc >= HeadersList[hdcnt]-2 and loc <= HeadersList[hdcnt]-2:
+    print obj + ','
+    hdcnt=hdcnt+1
+   else
+    print ','
+    hdcnt=hdcnt+1
+   
+   if hdcnt > 14:
+    hdcnt = 0
+
+ cnt=cnt+1
   
-   if (delim==0 and int(obj[:obj.find('|')]) < DWT):
-    print 'in: delim'
-    record = re.search(r'\|((.|\n)+)', obj).group(0)[1:]
-    print record
-    colcnt=colcnt+1
+  
+     #if (delim==0 and int(obj[:obj.find('|')]) < DWT):
+   # print 'in: delim'
+   # record = re.search(r'\|((.|\n)+)', obj).group(0)[1:]
+   # print record
+   # colcnt=colcnt+1
 
    
-    row = obj
-    obj = ''
-   else:
-    row = row + obj
-    obj = ''
+    #row = obj
+    #obj = ''
+   #else:
+    #row = row + obj
+    #obj = ''
   
-  
- cnt=cnt+1
   
    #sys.stdout.write('|') 
   #cnt=cnt+1
