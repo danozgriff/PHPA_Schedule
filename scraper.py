@@ -118,9 +118,9 @@ for tuple in tuples:
    cnt=-1
    #hdcnt=hdcnt+1
    
-   ##print 'loc: ' + str(loc) + ' obj: ' + obj
+   print 'loc: ' + str(loc) + ' obj: ' + obj
    #print colcnt
-   #print HeadersList[colcnt]
+   print 'HeadersList Val: ' + HeadersList[colcnt]
    #print loc
 
    if loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5:
