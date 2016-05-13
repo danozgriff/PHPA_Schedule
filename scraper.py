@@ -68,19 +68,11 @@ for tuple in tuples:
    obj = tuple[2].strip(' ') + '|' + obj
    cnt=0
 
-  
-  
-   print obj
-   print tuple[1]
-   print tuple[2]
-   print tuple[3]
-   #print obj
-   print obj.find('|')
-   #print int(obj[:obj.find('|')])
+
   
    if (delim==0 and int(obj[:obj.find('|')]) < DWT):
     print 'in: delim'
-    record = re.search(r'\|((.|\n)+)', obj).group(0)
+    record = re.search(r'\|((.|\n)+)', obj).group(0)[1:]
     print record
 
    
