@@ -99,7 +99,8 @@ for tuple in tuples:
    cnt=-1
    #hdcnt=hdcnt+1
    
-   print len(HeadersList)
+   print colcnt
+   
 
    if loc >= HeadersList[colcnt]-2 and loc <= HeadersList[colcnt]-2:
     lineout = lineout + obj + ','
