@@ -22,7 +22,7 @@ row=''
 headers=1
 colcnt=0
 hdcnt=0
-HeadersList = []
+HeadersList = list()
 for tuple in tuples:
 
  print 'Testing: ' + tuple[2]
