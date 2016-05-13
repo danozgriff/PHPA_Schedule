@@ -101,6 +101,7 @@ for tuple in tuples:
    
    print colcnt
    print HeadersList[colcnt]
+   print loc
 
    if loc >= HeadersList[colcnt]-2 and loc <= HeadersList[colcnt]+2:
     lineout = lineout + obj + ','
