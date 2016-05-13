@@ -25,9 +25,9 @@ for tuple in tuples:
 
  if headers==1:
   if cnt == 0:
-   DWT = tuple[2].strip(' ') #int
+   DWT = int(tuple[2].strip(' '))
   elif cnt == 1:
-   AGENT = tuple[2].strip(' ') #int
+   AGENT = int(tuple[2].strip(' ')) 
   elif cnt == 2:
    ETA = int(tuple[2].strip(' '))
   elif cnt == 3:
@@ -45,7 +45,8 @@ for tuple in tuples:
   elif cnt == 9:
    POB = int(tuple[2].strip(' '))
   elif cnt == 10:
-   TUGS = int(tuple[2].strip(' '))
+   TUGS = int(tuple[2].strip(' ')) #int
+   print 'tugs' + TUGS
   elif cnt == 11:
    BPN_DPN = int(tuple[2].strip(' '))
   elif cnt == 12:
