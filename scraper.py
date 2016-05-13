@@ -131,7 +131,7 @@ for tuple in tuples:
     colcnt=colcnt+1
    
    if colcnt > 12:
-    #print lineout[:-1]
+    print lineout[:-1]
     colcnt = 0
 
  cnt=cnt+1
