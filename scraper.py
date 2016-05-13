@@ -127,9 +127,10 @@ for tuple in tuples:
    while alignment==0: 
     if loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5:
      lineout = lineout + obj + ','
+     print 'CONFIRMED: ' + 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
      colcnt=colcnt+1
      alignment=1
-     print 'CONFIRMED: ' + 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
+
     else:
      print 'NO VALUE'
      lineout = lineout + ','
