@@ -21,8 +21,8 @@ obj = ''
 row=''
 headers=1
 colcnt=0
-hdcnt=0
-HeadersList = list()
+#hdcnt=0
+HeadersList = []
 for tuple in tuples:
 
  print 'Testing: ' + tuple[2]
@@ -30,47 +30,59 @@ for tuple in tuples:
  if headers==1:
   if cnt == 0:
    #DWT = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 2:
    #AGENT = int(tuple[2].strip(' ')) 
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 4:
    #ETA = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 6:
    #FROM = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 8:
    #TO = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 10:
    #VHF = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 12:
    #PILOT = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 14:
    #HARBOUR_PV = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 18:
    #HC_OR_PV = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 22:
    #POB = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 24:
    #TUGS = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 26:
    #BPN_DPN = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
   elif cnt == 30:
    #REMARKS = int(tuple[2].strip(' '))
-   HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
+   HeadersList.append(int(tuple[2].strip(' ')))
    headers=0
-   hdcnt=-1
+   #hdcnt=-1
    cnt=-1
-  hdcnt=hdcnt+1
+  #hdcnt=hdcnt+1
 
    
  if headers==0 and cnt >= 0:
@@ -82,7 +94,7 @@ for tuple in tuples:
    #print 'in: cnt=1'
    obj = tuple[2].strip(' ') + '|' + obj
    cnt=-1
-   hdcnt=hdcnt+1
+   #hdcnt=hdcnt+1
 
   
    if (delim==0 and int(obj[:obj.find('|')]) < DWT):
