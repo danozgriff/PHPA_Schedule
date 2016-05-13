@@ -107,7 +107,7 @@ for tuple in tuples:
  if headers==0 and cnt >= 0:
   #print 'Main End: ' + tuple[2].strip(' ')
   if cnt == 0:
-   loc = tuple[2].strip(' ')
+   loc = int(tuple[2].strip(' '))
    #obj = tuple[2].strip(' ')
    #print 'in: cnt=0'
    #cnt=cnt+1
