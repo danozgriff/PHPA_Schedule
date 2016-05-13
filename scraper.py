@@ -26,7 +26,7 @@ for tuple in tuples:
  if headers==1:
   if cnt == 0:
    DWT = int(tuple[2].strip(' '))
-   print 'dwt:' + dwt
+   print 'dwt:' + DWT
   elif cnt == 2:
    AGENT = int(tuple[2].strip(' '))
    print 'agent:' + agent
