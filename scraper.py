@@ -93,7 +93,7 @@ for tuple in tuples:
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
    HeadersList.append(int(tuple[2].strip(' '))+3)
    print 'BPN_DPN: ' + tuple[2].strip(' ')
-  elif cnt == 34:
+  elif cnt == 32:
    #REMARKS = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
    HeadersList.append(round(int(tuple[2].strip(' '))*.87,0))
