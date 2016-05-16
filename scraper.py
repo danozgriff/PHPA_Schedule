@@ -96,7 +96,7 @@ for tuple in tuples:
   elif cnt == 32:
    #REMARKS = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(round(int(tuple[2].strip(' '))*.87,0))
+   HeadersList.append(round(int(tuple[2].strip(' '))*.86,0))
    print 'REMARKS: ' + tuple[2].strip(' ')
    headers=0
    #print 'Headers End: ' + tuple[2].strip(' ')
