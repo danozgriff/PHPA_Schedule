@@ -13,7 +13,7 @@ print Schedule_Date
 
 # Scan PDF
 test1 = re.search(r'Duty Helo:((.|\n)+)TIDES', x).group(0)
-print test1
+#print test1
 #test1 = re.search(r'Day\'s Volume(.*?)<br \/><\/div>', html).group()
 tuples = re.findall(r'((left="|">)(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
 cnt=0
@@ -93,7 +93,7 @@ for tuple in tuples:
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
    HeadersList.append(int(tuple[2].strip(' '))+3)
    print 'BPN_DPN: ' + tuple[2].strip(' ')
-  elif cnt == 32:
+  elif cnt == 34:
    #REMARKS = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
    HeadersList.append(round(int(tuple[2].strip(' '))*.87,0))
