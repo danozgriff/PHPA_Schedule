@@ -91,7 +91,7 @@ for tuple in tuples:
   elif cnt == 28:
    #BPN_DPN = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+3)
+   HeadersList.append(int(tuple[2].strip(' '))+10)
    print 'BPN_DPN: ' + tuple[2].strip(' ')
   elif cnt == 32:
    #REMARKS = int(tuple[2].strip(' '))
