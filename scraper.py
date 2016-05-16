@@ -32,7 +32,7 @@ for tuple in tuples:
  if headers==1:
   if cnt == 0:
    #DWT = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))-80)
+   HeadersList.append(round(int(tuple[2].strip(' '))*.24,0))
    print 'VESSEL: ' + tuple[2].strip(' ')
   if cnt == 2:
    #DWT = int(tuple[2].strip(' '))
@@ -96,7 +96,7 @@ for tuple in tuples:
   elif cnt == 32:
    #REMARKS = int(tuple[2].strip(' '))
    #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(round(int(tuple[2].strip(' '))*.89,))
+   HeadersList.append(round(int(tuple[2].strip(' '))*.89,0))
    print 'REMARKS: ' + tuple[2].strip(' ')
    headers=0
    #print 'Headers End: ' + tuple[2].strip(' ')
