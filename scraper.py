@@ -127,7 +127,7 @@ for tuple in tuples:
    #print loc
 
    while alignment==0: 
-    print 'TESTING HDLIST Loc Val:' + str(HeadersList[colcnt])
+    print 'vesselflag: ' + str(vesselflag)
     if (loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5) or vesselflag==1:
      lineout = lineout + obj + ','
      print 'CONFIRMED: ' + 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
