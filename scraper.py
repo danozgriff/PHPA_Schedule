@@ -136,7 +136,8 @@ for tuple in tuples:
      vesselflag=0
 
     elif (loc >= 555 and loc <= 565):
-      colcnt=colcnt+1
+      #colcnt=colcnt+1
+      print 'skip'
 
     else:
      print 'NO VALUE'
