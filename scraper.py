@@ -25,6 +25,7 @@ colcnt=0
 #hdcnt=0
 HeadersList = []
 alignment=0
+vesselflag=1
 for tuple in tuples:
 
  #print 'Testing: ' + tuple[2]
@@ -32,7 +33,7 @@ for tuple in tuples:
  if headers==1:
   if cnt == 0:
    #DWT = int(tuple[2].strip(' '))
-   HeadersList.append(round(int(tuple[2].strip(' '))*.24,0))
+   HeadersList.append(round(int(tuple[2].strip(' '))*.024,0))
    print 'VESSEL: ' + tuple[2].strip(' ')
   if cnt == 2:
    #DWT = int(tuple[2].strip(' '))
@@ -125,11 +126,12 @@ for tuple in tuples:
    #print loc
 
    while alignment==0: 
-    if loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5:
+    if (loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5) or vesselflag=1:
      lineout = lineout + obj + ','
      print 'CONFIRMED: ' + 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
      colcnt=colcnt+1
      alignment=1
+     vesselflag=1
 
     else:
      print 'NO VALUE'
@@ -140,6 +142,7 @@ for tuple in tuples:
     print lineout[:-1]
     colcnt = 0
     lineout=''
+    vesselflag=1
 
  cnt=cnt+1
  alignment=0
