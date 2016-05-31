@@ -122,7 +122,7 @@ for tuple in tuples:
    
    print 'loc: ' + str(loc) + ' obj: ' + obj
    print colcnt
-   print 'HeadersList Len: ' + len(HeadersList)
+   print 'HeadersList Len: ' + str(len(HeadersList))
    print 'HeadersList Val: ' + str(HeadersList[colcnt])
    #print loc
 
