@@ -133,7 +133,7 @@ for tuple in tuples:
      print 'CONFIRMED: ' + 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
      colcnt=colcnt+1
      alignment=1
-     vesselflag=1
+     vesselflag=0
 
     else:
      print 'NO VALUE'
