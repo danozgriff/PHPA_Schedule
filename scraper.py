@@ -114,7 +114,7 @@ for tuple in tuples:
    #print 'in: cnt=0'
    #cnt=cnt+1
   elif cnt == 1:
-   obj = tuple[2].strip(' ')
+   obj = tuple[2].strip(' ').replace(',', '')
    #print 'in: cnt=1'
    #obj = tuple[2].strip(' ') + '|' + obj
    cnt=-1
