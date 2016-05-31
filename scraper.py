@@ -121,7 +121,7 @@ for tuple in tuples:
    #hdcnt=hdcnt+1
    
    print 'loc: ' + str(loc) + ' obj: ' + obj
-   #print colcnt
+   print colcnt
    print 'HeadersList Val: ' + str(HeadersList[colcnt])
    #print loc
 
