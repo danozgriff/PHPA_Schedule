@@ -135,9 +135,10 @@ for tuple in tuples:
      alignment=1
      vesselflag=0
 
-    elif (loc >= 555 and loc <= 565):
-      #colcnt=colcnt+1
-      print 'skip'
+    elif loc >= 555 and loc <= 565:
+     #colcnt=colcnt+1
+     alignment=1
+     print 'skip'
 
     else:
      print 'NO VALUE'
