@@ -135,6 +135,9 @@ for tuple in tuples:
      alignment=1
      vesselflag=0
 
+    elif (loc >= 555 and loc <= 565):
+      colcnt=colcnt+1
+
     else:
      print 'NO VALUE'
      lineout = lineout + ','
