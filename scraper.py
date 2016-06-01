@@ -134,7 +134,7 @@ for tuple in tuples:
      colcnt=colcnt+1
      alignment=1
      vesselflag=0
-     skipcnt=0
+     skipcnt=10
 
     elif loc >= 555 and loc <= 565:
      #colcnt=colcnt+1
@@ -146,7 +146,7 @@ for tuple in tuples:
      print 'NO VALUE'
      lineout = lineout + ','
      colcnt=colcnt+1
-     skipcnt=0
+     skipcnt=10
     
    if colcnt == 14:
     print lineout[:-1]
