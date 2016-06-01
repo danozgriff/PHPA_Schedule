@@ -126,7 +126,7 @@ for tuple in tuples:
    print 'HeadersList Val: ' + str(HeadersList[colcnt])
    #print loc
 
-   while alignment==0: 
+   while alignment==0 or skipcnt<10: 
     print 'vesselflag: ' + str(vesselflag)
     if (loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5) or vesselflag==1:
      lineout = lineout + obj + ','
@@ -134,22 +134,26 @@ for tuple in tuples:
      colcnt=colcnt+1
      alignment=1
      vesselflag=0
+     skipcnt=0
 
     elif loc >= 555 and loc <= 565:
      #colcnt=colcnt+1
      alignment=1
+     skipcnt=skipcnt+1
      print 'skip'
 
     else:
      print 'NO VALUE'
      lineout = lineout + ','
      colcnt=colcnt+1
+     skipcnt=0
     
    if colcnt == 14:
     print lineout[:-1]
     colcnt = 0
     lineout=''
     vesselflag=1
+    
 
  cnt=cnt+1
  alignment=0
