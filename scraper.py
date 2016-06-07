@@ -13,7 +13,7 @@ print Schedule_Date
 
 # Scan PDF
 test1 = re.search(r'Duty Helo:((.|\n)+)TIDES', x).group(0)
-#print test1
+print test1
 
 tuples = re.findall(r'((left="|">)(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
 #cnt=0
