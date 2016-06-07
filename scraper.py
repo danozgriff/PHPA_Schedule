@@ -46,7 +46,7 @@ for tuple in tuples:
      loc = float(tuple[2].strip(' '))
      recflag = 0
   
-  elif runcnt==30:
+  elif runcnt==32:
     headerrow=0
   
   
@@ -58,7 +58,7 @@ for tuple in tuples:
       colcnt=colcnt+1
       prevloc=loc
     else:
-      while recd==0 and debugcnt<50:
+      while recd==0 and debugcnt<25:
        debugcnt=debugcnt+1
        print 'PrevLoc: ' + str(prevloc) + ' Loc: ' + str(loc) + ' Calc: ' + str(float(loc/prevloc)) + ' ListVal: ' + str(float(ColList[colcnt]))
        if loc/prevloc >= ColList[colcnt]-.01 and loc/prevloc <= ColList[colcnt]+.01:
