@@ -13,177 +13,79 @@ print Schedule_Date
 
 # Scan PDF
 test1 = re.search(r'Duty Helo:((.|\n)+)TIDES', x).group(0)
-print test1
+#print test1
 
 tuples = re.findall(r'((left="|">)(.*?)(</text>|"))', test1.replace('<b>', '').replace('</b>', ''))
-cnt=0
-obj = ''
-row=''
+#cnt=0
+#obj = ''
+#row=''
 lineout=''
-headers=1
-colcnt=0
+#headers=1
+headerrow=1
+runcnt=1
 #hdcnt=0
-HeadersList = []
-alignment=0
-vesselflag=1
+#HeadersList = []
+recflag = 0
+prevloc = 0.0
+#alignment=0
+#vesselflag=1
+colcnt=0
+recd=0
+debugcnt=0
+ColList = [0, 10.48, 1.26,1.14,1.12,1.12,1.08,1.13,1.1,1.09,1.08,1.07,1.04,1.05];
+
 for tuple in tuples:
-
- #print 'Testing: ' + tuple[2]
-
- if headers==1:
-  if cnt == 0:
-   #DWT = int(tuple[2].strip(' '))
-   HeadersList.append(round(int(tuple[2].strip(' '))*.024,0))
-   print 'VESSEL: ' + tuple[2].strip(' ')
-  if cnt == 2:
-   #DWT = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))-3)
-   print 'DWT: ' + tuple[2].strip(' ')
-  elif cnt == 4:
-   #AGENT = int(tuple[2].strip(' ')) 
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+4)
-   print 'AGENT: ' + tuple[2].strip(' ')
-  elif cnt == 6:
-   #ETA = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+1)
-   print 'ETA: ' + tuple[2].strip(' ')
-  elif cnt == 8:
-   #FROM = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+5)
-   print 'FROM: ' + tuple[2].strip(' ')
-  elif cnt == 10:
-   #TO = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))-2)
-   print 'TO: ' + tuple[2].strip(' ')
-  elif cnt == 12:
-   #VHF = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+6)
-   print 'VHF: ' + tuple[2].strip(' ')
-  elif cnt == 14:
-   #PILOT = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+9)
-   print 'PILOT: ' + tuple[2].strip(' ')
-  elif cnt == 16:
-   #HARBOUR_PV = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+7)
-   print 'HARBOUR_PV: ' + tuple[2].strip(' ')
-  elif cnt == 20:
-   #HC_OR_PV = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))-2)
-   print 'HC_OR_PV: ' + tuple[2].strip(' ')
-  elif cnt == 24:
-   #POB = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+1)
-   print 'POB: ' + tuple[2].strip(' ')
-  elif cnt == 26:
-   #TUGS = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+7)
-   print 'TUGS: ' + tuple[2].strip(' ')
-  elif cnt == 28:
-   #BPN_DPN = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(int(tuple[2].strip(' '))+10)
-   print 'BPN_DPN: ' + tuple[2].strip(' ')
-  elif cnt == 32:
-   #REMARKS = int(tuple[2].strip(' '))
-   #HeadersList[hdcnt] = int(tuple[2].strip(' '))
-   HeadersList.append(round(int(tuple[2].strip(' '))*.89,0))
-   print 'REMARKS: ' + tuple[2].strip(' ')
-   headers=0
-   #print 'Headers End: ' + tuple[2].strip(' ')
-   #hdcnt=-1
-   cnt=-2
-  #hdcnt=hdcnt+1
-
-   
- if headers==0 and cnt >= 0:
-  #print 'Main End: ' + tuple[2].strip(' ')
-  if cnt == 0:
-   loc = int(tuple[2].strip(' '))
-   #obj = tuple[2].strip(' ')
-   #print 'in: cnt=0'
-   #cnt=cnt+1
-  elif cnt == 1:
-   obj = tuple[2].strip(' ').replace(',', '')
-   #print 'in: cnt=1'
-   #obj = tuple[2].strip(' ') + '|' + obj
-   cnt=-1
-   #hdcnt=hdcnt+1
-   
-   print 'loc: ' + str(loc) + ' obj: ' + obj
-   print colcnt
-   print 'HeadersList Len: ' + str(len(HeadersList))
-   print 'HeadersList Val: ' + str(HeadersList[colcnt])
-   #print loc
-
-   while alignment==0 or skipcnt<10: 
-    print 'vesselflag: ' + str(vesselflag)
-    if (loc >= HeadersList[colcnt]-5 and loc <= HeadersList[colcnt]+5) or vesselflag==1:
-     lineout = lineout + obj + ','
-     print 'CONFIRMED: ' + 'loc: ' + str(loc) + ' obj: ' + obj + ' LOCKED TO: ' + str(HeadersList[colcnt])
-     colcnt=colcnt+1
-     alignment=1
-     vesselflag=0
-     skipcnt=10
-
-    elif loc >= 555 and loc <= 565:
-     #colcnt=colcnt+1
-     alignment=1
-     skipcnt=skipcnt+1
-     print 'skip'
-
+  
+  if headerrow==0:
+   if (runcnt % 2) == 0:
+   # ojb
+     obj = tuple[2].strip(' ').replace(',', '')
+     recflag = 1
+   else:
+   # loc   
+     loc = float(tuple[2].strip(' '))
+     recflag = 0
+  
+  elif runcnt==34:
+    headerrow=0
+  
+  
+  # Record the Object
+  if recflag == 1:
+    if prevloc == 0.0:
+      print 'Vessel: ' + obj
+      lineout = lineout + obj + ','
+      colcnt=colcnt+1
+      prevloc=loc
     else:
-     print 'NO VALUE'
-     lineout = lineout + ','
-     colcnt=colcnt+1
-     skipcnt=10
-    
-   if colcnt == 14:
-    print lineout[:-1]
-    colcnt = 0
-    lineout=''
-    vesselflag=1
-    
+      while recd==0 and debugcnt<50:
+       debugcnt=debugcnt+1
+       print 'PrevLoc: ' + str(prevloc) + ' Loc: ' + str(loc) + ' Calc: ' + str(float(loc/prevloc)) + ' ListVal: ' + str(float(ColList[colcnt]))
+       if loc/prevloc >= ColList[colcnt]-.01 and loc/prevloc <= ColList[colcnt]+.01:
+         print 'AllOtherValidCols: ' + obj
+         lineout = lineout + obj + ','
+         colcnt=colcnt+1
+         prevloc=loc
+         recd=1
+       elif loc/prevloc > ColList[colcnt]+.1:
+         print 'InBlank'
+         lineout = lineout + ','
+         prevloc=prevloc*ColList[colcnt]
+         #colcnt=colcnt+1
+       elif loc/prevloc < ColList[colcnt]-.1:
+         print 'InAdditional'
+         recd=1
 
- cnt=cnt+1
- alignment=0
-  
-  
-     #if (delim==0 and int(obj[:obj.find('|')]) < DWT):
-   # print 'in: delim'
-   # record = re.search(r'\|((.|\n)+)', obj).group(0)[1:]
-   # print record
-   # colcnt=colcnt+1
+      # Reset Record recorded Flag     
+      recd=0      
+      debugcnt=0
+      
+    if colcnt == 14: 
+      print lineout[:-1]
+      lineout=''
+      colcnt=0
+      prevloc=0
+      runcnt=0
 
-   
-    #row = obj
-    #obj = ''
-   #else:
-    #row = row + obj
-    #obj = ''
-  
-  
-   #sys.stdout.write('|') 
-  #cnt=cnt+1
- # sys.stdout.write(tuple[2])
-  #print(tuple[2],end="")
-  #,flush=True
- # print tuple[3]
- #str(test1.replace(" ", "")).replace("><", ""))
- #tuples = re.findall(r'(\">|\'>|img\/)(.*?)(<\/|\.gif)', str(test1.replace(" ", "")).replace("><", ""))
- 
- 
- #<text top="97" left="28" width="329" height="19" font="0"><b>THURSDAY 12th MAY 2016          </b></text>
- 
-
+  runcnt=runcnt+1
 
